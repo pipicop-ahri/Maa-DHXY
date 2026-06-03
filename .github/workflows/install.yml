@@ -120,8 +120,7 @@ jobs:
           if [ -d "MFA" ]; then
             cp -rp MFA/. install/
           fi
-          cd tools/
-          ../install/python/python.exe ./install.py ${{ needs.meta.outputs.tag }} win x86_64
+          install/python/python.exe tools/install.py ${{ needs.meta.outputs.tag }} win x86_64
 
       - uses: actions/upload-artifact@v4
         with:

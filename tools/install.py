@@ -3,6 +3,10 @@ from pathlib import Path
 import shutil
 import sys
 
+_tools_dir = Path(__file__).resolve().parent
+if str(_tools_dir) not in sys.path:
+    sys.path.insert(0, str(_tools_dir))
+
 try:
     import jsonc
 except ModuleNotFoundError as e:
@@ -15,7 +19,7 @@ except ModuleNotFoundError as e:
 from configure import configure_ocr_model
 
 
-working_dir = Path(__file__).parent.parent.resolve()
+working_dir = _tools_dir.parent
 install_path = working_dir / Path("install")
 version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
 
