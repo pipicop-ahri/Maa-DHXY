@@ -124,7 +124,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Maa-DHXY-win-x86_64
+          name: Maa-DHXY
           path: "install"
 
   changelog:
