@@ -1,2 +1,4 @@
-# Installed into install/python at release build time. Pin maafw to match MaaFramework release.
+# Installed into install/python at release build time.
+json-with-comments
+# Pin maafw to match MaaFramework release.
 maafw>=5.3.0,<6

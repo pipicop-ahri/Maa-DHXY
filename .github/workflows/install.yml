@@ -121,7 +121,6 @@ jobs:
             cp -rp MFA/. install/
           fi
           cd tools/
-          python -m pip install -r ./requirements.txt
           ../install/python/python.exe ./install.py ${{ needs.meta.outputs.tag }} win x86_64
 
       - uses: actions/upload-artifact@v4
