@@ -24,13 +24,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [win, macos, linux]
-        arch: [aarch64, x86_64]
+        include:
+          - os: win
+            arch: x86_64
     steps:
       - uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: ${{ format('MaaXXX-{0}-{1}-*', matrix.os, matrix.arch) }}
+          filename: ${{ format('Maa-DHXY-{0}-{1}-*', matrix.os, matrix.arch) }}
           mirrorchyan_rid: MaaXXX
           tag: ${{ inputs.tag }}
 

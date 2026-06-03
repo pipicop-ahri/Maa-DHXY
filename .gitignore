@@ -439,13 +439,16 @@ enc_temp_folder/*
 # Nuke
 .nuke/temp/*
 
-# Build
+# Build / release output (CI generates install/ with embedded python, maafw, MFA, OCR)
 deps/*
 !deps/tools/
 deps/tools/*
 !deps/tools/*.schema.json
 build
-install
+install/
+
+# OCR models: not in git; CI copies from assets/MaaCommonAssets submodule into release
+# assets/resource/model/ocr/ is ignored via assets/resource/model/.gitignore
 
 # Tools
 tools/ImageCropper/**/*.png
